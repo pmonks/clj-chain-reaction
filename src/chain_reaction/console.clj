@@ -60,7 +60,7 @@
     (jansi/white (nth numbers 0))
     (let [owner        (cr/cell-owner board coords)
           number       (cr/cell-count board coords)
-          colour-index (.indexOf (vec (cr/players board)) owner)
+          colour-index (.indexOf ^java.util.List (vec (cr/players board)) owner)
           colour-fn    (nth colour-fns colour-index)]
       (colour-fn (nth numbers number)))))
 
