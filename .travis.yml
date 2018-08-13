@@ -1,0 +1,9 @@
+language: clojure
+sudo: false
+jdk:
+  - oraclejdk8
+  - oraclejdk10
+
+lein: 2.8.1
+
+script: lein do check, midje
