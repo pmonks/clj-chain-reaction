@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pmonks/clj-chain-reaction.svg?branch=master)](https://travis-ci.org/pmonks/clj-chain-reaction)
+[![Build Status](https://travis-ci.com/pmonks/clj-chain-reaction.svg?branch=master)](https://travis-ci.com/pmonks/clj-chain-reaction)
 [![Open Issues](https://img.shields.io/github/issues/pmonks/clj-chain-reaction.svg)](https://github.com/pmonks/clj-chain-reaction/issues)
 [![License](https://img.shields.io/github/license/pmonks/clj-chain-reaction.svg)](https://github.com/pmonks/clj-chain-reaction/blob/master/LICENSE)
 [![Dependencies Status](https://versions.deps.co/pmonks/clj-chain-reaction/status.svg)](https://versions.deps.co/pmonks/clj-chain-reaction)
