@@ -117,6 +117,7 @@
 (defn number-of-neighbours
   "Returns the number of neighbours the given cell has."
   [board [x y]]
+  { :pre [ (legal-coords? board [x y]) ]}
   (- 4 (if (= x 0)                          1 0)
        (if (= x (dec (board-width board)))  1 0)
        (if (= y 0)                          1 0)
