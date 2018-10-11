@@ -26,11 +26,6 @@
                      ["jitpack"            {:url "https://jitpack.io"}]]
   :dependencies     [[org.clojure/clojure "1.9.0"]
                      [jansi-clj           "0.1.1"]]
-  :profiles         {:dev {:dependencies [[midje      "1.9.2"]]
+  :profiles         {:dev {:dependencies [[midje      "1.9.3"]]
                            :plugins      [[lein-midje "3.2.1"]]}}
-  :jvm-opts         ~(let [version     (System/getProperty "java.version")
-                           [major _ _] (clojure.string/split version #"\.")]
-                       (if (>= (java.lang.Integer/parseInt major) 9)
-                         ["--add-modules" "java.xml.bind"]
-                         []))
   )
