@@ -16,16 +16,22 @@
 ;
 
 (defproject org.clojars.pmonks/clj-chain-reaction "0.1.0-SNAPSHOT"
-  :description      "Clojure implementation of Chain Reaction board game."
+  :description      "Clojure/Script implementation of Chain Reaction board game."
   :url              "https://github.com/pmonks/clj-chain-reaction"
   :license          {:spdx-license-identifier "Apache-2.0"
                      :name                    "Apache License, Version 2.0"
                      :url                     "http://www.apache.org/licenses/LICENSE-2.0"}
-  :min-lein-version "2.8.1"
-  :repositories     [["sonatype-snapshots" {:url "https://oss.sonatype.org/content/groups/public" :snapshots true}]
-                     ["jitpack"            {:url "https://jitpack.io"}]]
-  :dependencies     [[org.clojure/clojure "1.9.0"]
-                     [jansi-clj           "0.1.1"]]
-  :profiles         {:dev {:dependencies [[midje      "1.9.3"]]
-                           :plugins      [[lein-midje "3.2.1"]]}}
-  )
+  :min-lein-version "2.9.0"
+  :dependencies     [[org.clojure/clojure       "1.10.0"]
+                     [org.clojure/clojurescript "1.10.520"]]
+  :cljsbuild        {:builds        {}
+                     :test-commands {"unit-tests" ["lein" "with-profile" "test" "doo" "node" "once"]}}
+  :doo              {:build "test"}
+  :profiles         {:dev  {:plugins [[lein-cljsbuild "1.1.7"]
+                                      [lein-doo       "0.1.10"]]}
+                     :test {:cljsbuild {:builds {:test {:source-paths  ["src" "test"]
+                                                        :compiler      {:output-to "unit-tests.js"
+                                                                        :target    :nodejs
+                                                                        :main      chain-reaction.doo-runner}
+                                                        :optimizations :whitespace
+                                                        :pretty-print  true}}}}})

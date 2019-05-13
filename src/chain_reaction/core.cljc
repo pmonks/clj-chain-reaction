@@ -29,8 +29,8 @@
   "Returns a new cell."
   ([] (new-cell nil 0))
   ([owner count]
-   (when-not (zero? count)
-     {:owner owner, :count count} )))
+   (if (pos? count)
+     { :owner owner :count count })))
 
 (defn board-width
   "Returns the width of the given board."
@@ -43,7 +43,7 @@
   (:height board))
 
 (defn board-cells
-  "Returns all cells on the given board."
+  "Returns the populated cells on the given board."
   [board]
   (:cells board))
 
@@ -55,8 +55,9 @@
        (>= y 0)
        (<  y (board-height board))))
 
-(defn all-cells
-  "Returns all cells on the given board."
+; Not clear that this is needed...
+(defn all-cell-coords
+  "Returns the coordinates of all cells on the given board."
   [board]
   (for [x (range (board-width board)) y (range (board-height board))] [x y]))
 
@@ -92,18 +93,13 @@
 
 (defn cell-owner
   "Returns the owner of the given cell (nil if unowned)."
-  ([board coords]
-   (cell-owner (get-cell board coords)))
-  ([cell]
-   (when-not (nil? cell)
-    (:owner cell))))
+  ([board coords] (cell-owner (get-cell board coords)))
+  ([cell]         (:owner cell)))
 
 (defn cell-unowned?
   "Is the given cell unowned?"
-  ([board coords]
-   (cell-unowned? (get-cell board coords)))
-  ([cell]
-   (nil? (cell-owner cell))))
+  ([board coords] (cell-unowned? (get-cell board coords)))
+  ([cell] (nil? (cell-owner cell))))
 
 (defn cell-count
   "Returns the number of items in the given cell."
@@ -142,7 +138,7 @@
   [board]
   (boolean (some true? (map #(full? board %) (occupied-cells board)))))
 
-(defn find-full-cell
+(defn find-first-full-cell
   "Find the first full cell on the board, or nil if there aren't any."
   [board]
   (let [cell-coords (occupied-cells board)]
@@ -180,7 +176,7 @@
   [board]
   (loop [board board]
     (if (any-full-cells? board)
-      (recur (explode-full-cell board (find-full-cell board)))
+      (recur (explode-full-cell board (find-first-full-cell board)))
       board)))
 
 (defn legal-move?
