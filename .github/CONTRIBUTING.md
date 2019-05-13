@@ -21,22 +21,21 @@ By submitting a contribution to the clj-chain-reaction project you agree to the 
 * [ ] Are you sure this is a bug or missing capability?
 
 ## Raising an Issue
-* Create your issue [here](https://github.com/pmonks/clj-chain-reaction/issues/new).
-* Please use [Markdown formatting](https://help.github.com/categories/writing-on-github/)
-liberally to assist in readability.
+* Create your issue [here](https://github.com/pmonks/clj-chain-reaction/issues/new/choose), choosing the most appropriate template for your issue.
+* Please use [Markdown formatting](https://help.github.com/categories/writing-on-github/) liberally to assist in readability.
   * [Code fences](https://help.github.com/articles/creating-and-highlighting-code-blocks/) for exception stack traces and log entries, for example, massively improve readability.
 
 # Contributing Pull Requests (Code & Docs)
 To make review of PRs easier, please:
 
- * Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.
- * For code contributions, follow the existing code layout.
- * For documentation contributions, follow the general structure, language, and tone of the existing docs.
- * Keep PRs small and cohesive - if you have multiple contributions, please submit them as independent PRs.
- * Reference issue #s if your PR has anything to do with an issue (even if it doesn't address it).
- * Minimise non-functional changes (e.g. whitespace shenanigans).
- * Ensure all new files include a header comment block containing the [Apache License v2.0 and your copyright information](http://www.apache.org/licenses/LICENSE-2.0#apply).
- * If necessary (e.g. due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/pmonks/clj-chain-reaction/blob/master/NOTICE) with any new attribution or other notices
+ 1. Please make sure your PRs will merge cleanly - PRs that don't are unlikely to be accepted.
+ 2. For code contributions, follow the existing code layout.
+ 3. For documentation contributions, follow the general structure, language, and tone of the existing docs.
+ 4. Keep PRs small and cohesive - if you have multiple contributions, please submit them as independent PRs.
+ 5. Reference issue #s if your PR has anything to do with an issue (even if it doesn't address it).
+ 6. Minimise non-functional changes (e.g. whitespace shenanigans).
+ 7. Ensure all new files include a header comment block containing the [Apache License v2.0 and your copyright information](http://www.apache.org/licenses/LICENSE-2.0#apply).
+ 8. If necessary (e.g. due to 3rd party dependency licensing requirements), update the [NOTICE file](https://github.com/pmonks/clj-chain-reaction/blob/master/NOTICE) with any new attribution or other notices
 
 
 ## Commit and PR Messages
