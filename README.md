@@ -5,7 +5,7 @@
 
 # clj-chain-reaction
 
-A Clojure implementation of the game described [here](http://www.atarimagazines.com/compute/issue80/chain_reaction.php).
+A cross-platform (Clojure & ClojureScript) implementation of the game described [here](http://www.atarimagazines.com/compute/issue80/chain_reaction.php).
 
 ## Installation
 
