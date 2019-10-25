@@ -1,6 +1,7 @@
 sudo: false
 language: clojure
 lein: 2.9.1
+dist: trusty   # Because Travis CI's support for older versions of Java is *garbage*
 
 jdk:
   - oraclejdk8
