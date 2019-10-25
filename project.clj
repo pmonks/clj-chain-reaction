@@ -28,7 +28,7 @@
                      :test-commands {"unit-tests" ["lein" "with-profile" "test" "doo" "node" "once"]}}
   :doo              {:build "test"}
   :profiles         {:dev  {:plugins [[lein-cljsbuild "1.1.7"]
-                                      [lein-doo       "0.1.10"]]}
+                                      [lein-doo       "0.1.11"]]}
                      :test {:cljsbuild {:builds {:test {:source-paths  ["src" "test"]
                                                         :compiler      {:output-to "unit-tests.js"
                                                                         :target    :nodejs
